@@ -1,11 +1,10 @@
-# senba-lp
+# senba Webサイト
 
-senba（旧高原ビル・国際ビル）出店者募集ランディングページの**プレビュー環境**です。
-チーム内で本番のイメージを確認するために公開しています。正式公開は国際ドメイン配下を予定。
+senba（旧高原ビル／国際ビル・徳島市東船場）の公式サイトです。運営：株式会社国際
 
-- プレビューURL: https://ken2jap-wq.github.io/senba-lp/
-- 元データ: ReAsset 側の作業フォルダ `06_集客・広報・SNS/01_LP/`（このリポジトリへは確認用にコピー）
-- 検索エンジンには載せない設定（noindex）にしています。
+- 公開URL: https://kokusai-inc.github.io/
+- 将来の予定: 国際のドメイン（senba.kokusai-inc.com）へ切り替え。切り替え後は上のURLから自動で転送されます
+- 旧プレビューURL（https://ken2jap-wq.github.io/senba-lp/）は、このサイトへ転送しています
 
 ## 著作権
 
