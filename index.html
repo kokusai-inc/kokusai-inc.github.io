@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Caprasimo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=Caprasimo&family=DotGothic16&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#7A2E2A;      /* 基調色：こげ茶寄りの臙脂（国際社長指示 9/9・スクラッチタイルの印象） */
@@ -199,6 +199,7 @@
   .floor .row h3{font-size:1.02rem;font-weight:700;margin:.35rem 0 .1rem;color:var(--ink);letter-spacing:.06em}
   .floor .row h3 small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--grey);font-weight:500;margin-top:.2em}
   .floor .row p{font-size:.84rem;color:var(--grey);line-height:1.8;margin-top:.3rem}
+  .floor .row .more{display:inline-block;margin:.5rem 0 0 .8rem;font-size:.78rem;font-weight:700;color:var(--red);border-bottom:1px solid currentColor;line-height:1.4}
   .floor .row .tag{display:inline-block;margin-top:.5rem;font-size:.66rem;font-weight:700;letter-spacing:.14em;color:var(--blue);border:1px solid var(--blue);border-radius:999px;padding:.15em .9em}
 
   /* HOW (体験カード風) */
@@ -337,6 +338,7 @@
     .f-bottom{flex-direction:column}.f-bottom .links a{margin:0 16px 0 0}
   }
 </style>
+<link rel="stylesheet" href="assets/pixel.css">
 </head>
 <body>
 
@@ -369,6 +371,8 @@
   <a href="#how">1Fのしくみ<small>HOW IT WORKS</small></a>
   <a href="#join">出店者募集<small>JOIN US</small></a>
   <a href="#access">アクセス<small>ACCESS</small></a>
+  <a href="2f/">2F ギャラリーの予約<small>GALLERY</small></a>
+  <a href="3f/">3F ワークスペースの予約<small>WORKSPACE</small></a>
   <a href="#contact" style="border:0;margin-top:20px"><span class="btn">出店エントリー</span></a>
 </div>
 
@@ -547,19 +551,52 @@
         <div class="label reveal"><span class="e en">FLOOR</span><span class="j">フロア案内</span></div>
         <div class="grid">
           <div class="iso reveal">
-            <!-- 3層のアイソメ図（階段が1F→2F→3Fとつながる） -->
-            <svg viewBox="0 0 420 610" xmlns="http://www.w3.org/2000/svg" aria-label="フロア構成。中央の階段が1階から3階までつながる"><polygon points="120.0,470.0 300.0,470.0 360.0,520.0 180.0,520.0" fill="#FFF4EA"/><polygon points="180.0,520.0 360.0,520.0 360.0,534.0 180.0,534.0" fill="#EAD8CA"/><polygon points="120.0,470.0 180.0,520.0 180.0,534.0 120.0,484.0" fill="#D9C4B4"/><polygon points="247.6,310.0 274.0,310.0 274.0,324.0 247.6,324.0" fill="#DDAA2C"/><polygon points="274.0,310.0 286.0,320.0 286.0,334.0 274.0,324.0" fill="#C2921E"/><g stroke="#8E7B6B" stroke-width=".35" stroke-linejoin="round"><polygon points="212.0,520.0 212.0,505.7 200.0,495.7 200.0,510.0" fill="#CDBBA9"/><polygon points="212.0,505.7 217.3,505.7 205.3,495.7 200.0,495.7" fill="#FBF6EF"/><polygon points="217.3,505.7 217.3,491.4 205.3,481.4 205.3,495.7" fill="#CDBBA9"/><polygon points="217.3,491.4 222.6,491.4 210.6,481.4 205.3,481.4" fill="#FBF6EF"/><polygon points="222.6,491.4 222.6,477.1 210.6,467.1 210.6,481.4" fill="#CDBBA9"/><polygon points="222.6,477.1 227.9,477.1 215.9,467.1 210.6,467.1" fill="#FBF6EF"/><polygon points="227.9,477.1 227.9,462.9 215.9,452.9 215.9,467.1" fill="#CDBBA9"/><polygon points="227.9,462.9 233.1,462.9 221.1,452.9 215.9,452.9" fill="#FBF6EF"/><polygon points="233.1,462.9 233.1,448.6 221.1,438.6 221.1,452.9" fill="#CDBBA9"/><polygon points="233.1,448.6 238.4,448.6 226.4,438.6 221.1,438.6" fill="#FBF6EF"/><polygon points="238.4,448.6 238.4,434.3 226.4,424.3 226.4,438.6" fill="#CDBBA9"/><polygon points="238.4,434.3 243.7,434.3 231.7,424.3 226.4,424.3" fill="#FBF6EF"/><polygon points="243.7,434.3 243.7,420.0 231.7,410.0 231.7,424.3" fill="#CDBBA9"/><polygon points="243.7,420.0 249.0,420.0 237.0,410.0 231.7,410.0" fill="#FBF6EF"/><polygon points="249.0,420.0 249.0,405.7 237.0,395.7 237.0,410.0" fill="#CDBBA9"/><polygon points="249.0,405.7 254.3,405.7 242.3,395.7 237.0,395.7" fill="#FBF6EF"/><polygon points="254.3,405.7 254.3,391.4 242.3,381.4 242.3,395.7" fill="#CDBBA9"/><polygon points="254.3,391.4 259.6,391.4 247.6,381.4 242.3,381.4" fill="#FBF6EF"/><polygon points="259.6,391.4 259.6,377.1 247.6,367.1 247.6,381.4" fill="#CDBBA9"/><polygon points="259.6,377.1 264.9,377.1 252.9,367.1 247.6,367.1" fill="#FBF6EF"/><polygon points="264.9,377.1 264.9,362.9 252.9,352.9 252.9,367.1" fill="#CDBBA9"/><polygon points="264.9,362.9 270.1,362.9 258.1,352.9 252.9,352.9" fill="#FBF6EF"/><polygon points="270.1,362.9 270.1,348.6 258.1,338.6 258.1,352.9" fill="#CDBBA9"/><polygon points="270.1,348.6 275.4,348.6 263.4,338.6 258.1,338.6" fill="#FBF6EF"/><polygon points="275.4,348.6 275.4,334.3 263.4,324.3 263.4,338.6" fill="#CDBBA9"/><polygon points="275.4,334.3 280.7,334.3 268.7,324.3 263.4,324.3" fill="#FBF6EF"/><polygon points="280.7,334.3 280.7,320.0 268.7,310.0 268.7,324.3" fill="#CDBBA9"/><polygon points="280.7,320.0 286.0,320.0 274.0,310.0 268.7,310.0" fill="#FBF6EF"/><polygon points="212.0,520.0 212.0,505.7 217.3,505.7 217.3,491.4 222.6,491.4 222.6,477.1 227.9,477.1 227.9,462.9 233.1,462.9 233.1,448.6 238.4,448.6 238.4,434.3 243.7,434.3 243.7,420.0 249.0,420.0 249.0,405.7 254.3,405.7 254.3,391.4 259.6,391.4 259.6,377.1 264.9,377.1 264.9,362.9 270.1,362.9 270.1,348.6 275.4,348.6 275.4,334.3 280.7,334.3 280.7,320.0 286.0,320.0 286.0,329.0 218.9,520.0" fill="#E9DDCF"/></g><polygon points="120.0,270.0 300.0,270.0 360.0,320.0 286.0,320.0 274.0,310.0 247.6,310.0 259.6,320.0 180.0,320.0" fill="#F9C846"/><polygon points="180.0,320.0 259.6,320.0 259.6,334.0 180.0,334.0" fill="#DDAA2C"/><polygon points="286.0,320.0 360.0,320.0 360.0,334.0 286.0,334.0" fill="#DDAA2C"/><polygon points="120.0,270.0 180.0,320.0 180.0,334.0 120.0,284.0" fill="#C2921E"/><polygon points="247.6,110.0 274.0,110.0 274.0,124.0 247.6,124.0" fill="#268F70"/><polygon points="274.0,110.0 286.0,120.0 286.0,134.0 274.0,124.0" fill="#1F7A60"/><g stroke="#8E7B6B" stroke-width=".35" stroke-linejoin="round"><polygon points="212.0,320.0 212.0,305.7 200.0,295.7 200.0,310.0" fill="#CDBBA9"/><polygon points="212.0,305.7 217.3,305.7 205.3,295.7 200.0,295.7" fill="#FBF6EF"/><polygon points="217.3,305.7 217.3,291.4 205.3,281.4 205.3,295.7" fill="#CDBBA9"/><polygon points="217.3,291.4 222.6,291.4 210.6,281.4 205.3,281.4" fill="#FBF6EF"/><polygon points="222.6,291.4 222.6,277.1 210.6,267.1 210.6,281.4" fill="#CDBBA9"/><polygon points="222.6,277.1 227.9,277.1 215.9,267.1 210.6,267.1" fill="#FBF6EF"/><polygon points="227.9,277.1 227.9,262.9 215.9,252.9 215.9,267.1" fill="#CDBBA9"/><polygon points="227.9,262.9 233.1,262.9 221.1,252.9 215.9,252.9" fill="#FBF6EF"/><polygon points="233.1,262.9 233.1,248.6 221.1,238.6 221.1,252.9" fill="#CDBBA9"/><polygon points="233.1,248.6 238.4,248.6 226.4,238.6 221.1,238.6" fill="#FBF6EF"/><polygon points="238.4,248.6 238.4,234.3 226.4,224.3 226.4,238.6" fill="#CDBBA9"/><polygon points="238.4,234.3 243.7,234.3 231.7,224.3 226.4,224.3" fill="#FBF6EF"/><polygon points="243.7,234.3 243.7,220.0 231.7,210.0 231.7,224.3" fill="#CDBBA9"/><polygon points="243.7,220.0 249.0,220.0 237.0,210.0 231.7,210.0" fill="#FBF6EF"/><polygon points="249.0,220.0 249.0,205.7 237.0,195.7 237.0,210.0" fill="#CDBBA9"/><polygon points="249.0,205.7 254.3,205.7 242.3,195.7 237.0,195.7" fill="#FBF6EF"/><polygon points="254.3,205.7 254.3,191.4 242.3,181.4 242.3,195.7" fill="#CDBBA9"/><polygon points="254.3,191.4 259.6,191.4 247.6,181.4 242.3,181.4" fill="#FBF6EF"/><polygon points="259.6,191.4 259.6,177.1 247.6,167.1 247.6,181.4" fill="#CDBBA9"/><polygon points="259.6,177.1 264.9,177.1 252.9,167.1 247.6,167.1" fill="#FBF6EF"/><polygon points="264.9,177.1 264.9,162.9 252.9,152.9 252.9,167.1" fill="#CDBBA9"/><polygon points="264.9,162.9 270.1,162.9 258.1,152.9 252.9,152.9" fill="#FBF6EF"/><polygon points="270.1,162.9 270.1,148.6 258.1,138.6 258.1,152.9" fill="#CDBBA9"/><polygon points="270.1,148.6 275.4,148.6 263.4,138.6 258.1,138.6" fill="#FBF6EF"/><polygon points="275.4,148.6 275.4,134.3 263.4,124.3 263.4,138.6" fill="#CDBBA9"/><polygon points="275.4,134.3 280.7,134.3 268.7,124.3 263.4,124.3" fill="#FBF6EF"/><polygon points="280.7,134.3 280.7,120.0 268.7,110.0 268.7,124.3" fill="#CDBBA9"/><polygon points="280.7,120.0 286.0,120.0 274.0,110.0 268.7,110.0" fill="#FBF6EF"/><polygon points="212.0,320.0 212.0,305.7 217.3,305.7 217.3,291.4 222.6,291.4 222.6,277.1 227.9,277.1 227.9,262.9 233.1,262.9 233.1,248.6 238.4,248.6 238.4,234.3 243.7,234.3 243.7,220.0 249.0,220.0 249.0,205.7 254.3,205.7 254.3,191.4 259.6,191.4 259.6,177.1 264.9,177.1 264.9,162.9 270.1,162.9 270.1,148.6 275.4,148.6 275.4,134.3 280.7,134.3 280.7,120.0 286.0,120.0 286.0,129.0 218.9,320.0" fill="#E9DDCF"/></g><polygon points="120.0,70.0 300.0,70.0 360.0,120.0 286.0,120.0 274.0,110.0 247.6,110.0 259.6,120.0 180.0,120.0" fill="#2EAA86"/><polygon points="180.0,120.0 259.6,120.0 259.6,134.0 180.0,134.0" fill="#268F70"/><polygon points="286.0,120.0 360.0,120.0 360.0,134.0 286.0,134.0" fill="#268F70"/><polygon points="120.0,70.0 180.0,120.0 180.0,134.0 120.0,84.0" fill="#1F7A60"/><text x="16" y="104" fill="#fff" font-family="Cormorant Garamond, serif" font-size="24" font-weight="600" letter-spacing="2">3F</text><text x="16" y="125" fill="#F3E6D8" font-family="Zen Kaku Gothic New, sans-serif" font-size="10.5" font-weight="700" letter-spacing=".5">新町川ワークスペース</text><text x="16" y="304" fill="#fff" font-family="Cormorant Garamond, serif" font-size="24" font-weight="600" letter-spacing="2">2F</text><text x="16" y="325" fill="#F3E6D8" font-family="Zen Kaku Gothic New, sans-serif" font-size="10.5" font-weight="700" letter-spacing=".5">新町川文化ギャラリー</text><text x="16" y="504" fill="#fff" font-family="Cormorant Garamond, serif" font-size="24" font-weight="600" letter-spacing="2">1F</text><text x="16" y="525" fill="#F3E6D8" font-family="Zen Kaku Gothic New, sans-serif" font-size="10.5" font-weight="700" letter-spacing=".5">POPUP STORE東船場</text><text x="240" y="592" fill="#F5F3ED" font-family="Zen Kaku Gothic New, sans-serif" font-size="11" text-anchor="middle" opacity=".75" letter-spacing="1">中央の階段が3つのフロアをむすぶ</text></svg>
+            <!-- 3層のアイソメ図（ドット絵）。階段が1F→2F→3Fとつながる -->
+            <svg viewBox="0 0 420 610" xmlns="http://www.w3.org/2000/svg" aria-label="フロア構成。中央の階段が1階から3階までつながる"><image href="img/pixel/floors_iso.png" x="0" y="0" width="420" height="608" preserveAspectRatio="none" style="image-rendering:pixelated"/><g font-family="DotGothic16, Zen Kaku Gothic New, monospace"><text x="14" y="104" fill="#fff" font-size="26" letter-spacing="2">3F</text><text x="14" y="126" fill="#F3E6D8" font-size="11.5">新町川ワークスペース</text><text x="14" y="304" fill="#fff" font-size="26" letter-spacing="2">2F</text><text x="14" y="326" fill="#F3E6D8" font-size="11.5">新町川文化ギャラリー</text><text x="14" y="504" fill="#fff" font-size="26" letter-spacing="2">1F</text><text x="14" y="526" fill="#F3E6D8" font-size="11.5">POPUP STORE東船場</text><text x="240" y="598" fill="#F5F3ED" font-size="11.5" text-anchor="middle" opacity=".8">中央の階段が3つのフロアをむすぶ</text></g></svg>
           </div>
           <div class="card reveal">
-            <div class="row f3"><div class="mini" aria-hidden="true"><svg viewBox="0 0 100 78" xmlns="http://www.w3.org/2000/svg"><path d="M8 38 L68 38 L92 58 L32 58 Z" fill="#2EAA86"/><path d="M8 38 L32 58 L32 66 L8 46 Z" fill="#1F7A60"/><path d="M32 58 L92 58 L92 66 L32 66 Z" fill="#268F70"/></svg></div><img src="img/river_view.jpg" alt="3階 新町川ワークスペース（新町川側から）" loading="lazy"><div><div class="fl en">3F</div><h3>新町川ワークスペース<small>WORKSPACE / VIRTUAL OFFICE</small></h3><p>街の未来を仕込む拠点。文化財に登記できるバーチャルオフィス、書棚、週1回の小さなイベント。</p><span class="tag">2026年 開設予定</span></div></div>
-            <div class="row f2"><div class="mini" aria-hidden="true"><svg viewBox="0 0 100 78" xmlns="http://www.w3.org/2000/svg"><path d="M8 38 L68 38 L92 58 L32 58 Z" fill="#F9C846"/><path d="M8 38 L32 58 L32 66 L8 46 Z" fill="#C2921E"/><path d="M32 58 L92 58 L92 66 L32 66 Z" fill="#DDAA2C"/><polygon points="40.0,46.0 40.0,39.0 48.0,43.0 48.0,50.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="40.0,39.0 44.6,39.0 52.6,43.0 48.0,43.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="44.6,39.0 44.6,32.0 52.6,36.0 52.6,43.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="44.6,32.0 49.2,32.0 57.2,36.0 52.6,36.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="49.2,32.0 49.2,25.0 57.2,29.0 57.2,36.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="49.2,25.0 53.8,25.0 61.8,29.0 57.2,29.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="53.8,25.0 53.8,18.0 61.8,22.0 61.8,29.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="53.8,18.0 58.4,18.0 66.4,22.0 61.8,22.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="58.4,18.0 58.4,11.0 66.4,15.0 66.4,22.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="58.4,11.0 63.0,11.0 71.0,15.0 66.4,15.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="63.0,11.0 63.0,4.0 71.0,8.0 71.0,15.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="63.0,4.0 67.6,4.0 75.6,8.0 71.0,8.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/></svg></div><img src="img/gallery_2.jpg" alt="2階 新町川文化ギャラリー" loading="lazy"><div><div class="fl en">2F</div><h3>新町川文化ギャラリー<small>GALLERY / EVENT</small></h3><p>個展・展示・小さな催し。人と街が出会うハレの場。</p><span class="tag">利用相談受付</span></div></div>
-            <div class="row f1"><div class="mini" aria-hidden="true"><svg viewBox="0 0 100 78" xmlns="http://www.w3.org/2000/svg"><path d="M8 38 L68 38 L92 58 L32 58 Z" fill="#FFF4EA"/><path d="M8 38 L32 58 L32 66 L8 46 Z" fill="#D9C4B4"/><path d="M32 58 L92 58 L92 66 L32 66 Z" fill="#EAD8CA"/><polygon points="40.0,46.0 40.0,39.0 48.0,43.0 48.0,50.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="40.0,39.0 44.6,39.0 52.6,43.0 48.0,43.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="44.6,39.0 44.6,32.0 52.6,36.0 52.6,43.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="44.6,32.0 49.2,32.0 57.2,36.0 52.6,36.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="49.2,32.0 49.2,25.0 57.2,29.0 57.2,36.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="49.2,25.0 53.8,25.0 61.8,29.0 57.2,29.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="53.8,25.0 53.8,18.0 61.8,22.0 61.8,29.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="53.8,18.0 58.4,18.0 66.4,22.0 61.8,22.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="58.4,18.0 58.4,11.0 66.4,15.0 66.4,22.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="58.4,11.0 63.0,11.0 71.0,15.0 66.4,15.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/><polygon points="63.0,11.0 63.0,4.0 71.0,8.0 71.0,15.0" fill="#B9A593" stroke="#2A2521" stroke-width=".4"/><polygon points="63.0,4.0 67.6,4.0 75.6,8.0 71.0,8.0" fill="#FFFFFF" stroke="#2A2521" stroke-width=".4"/></svg></div><img src="img/facade_entrance.jpg" alt="1階 POPUP STORE東船場" loading="lazy"><div><div class="fl en">1F</div><h3>POPUP STORE東船場<small>ONE-MONTH SHOP</small></h3><p>1ヶ月だけの店主が入れ替わる、街にひらかれた1階。アーチ窓と天井の高さが気持ちいい。売上歩合10%。</p><span class="tag">出店者募集中</span></div></div>
+            <div class="row f3"><div class="mini" aria-hidden="true"><img class="px" src="img/pixel/mini_3f.png" alt=""></div><img src="img/river_view.jpg" alt="3階 新町川ワークスペース（新町川側から）" loading="lazy"><div><div class="fl en"><img class="px-ico" src="img/pixel/icon-3f.svg" alt="" style="width:.8em;height:.8em;margin-right:.25em;vertical-align:.02em">3F</div><h3>新町川ワークスペース<small>WORKSPACE / VIRTUAL OFFICE</small></h3><p>街の未来を仕込む拠点。文化財に登記できるバーチャルオフィス、書棚、週1回の小さなイベント。</p><span class="tag">2026年12月 開設予定</span><a class="more" href="3f/">ドロップイン予約・VO →</a></div></div>
+            <div class="row f2"><div class="mini" aria-hidden="true"><img class="px" src="img/pixel/mini_2f.png" alt=""></div><img src="img/gallery_2.jpg" alt="2階 新町川文化ギャラリー" loading="lazy"><div><div class="fl en"><img class="px-ico" src="img/pixel/icon-2f.svg" alt="" style="width:.8em;height:.8em;margin-right:.25em;vertical-align:.02em">2F</div><h3>新町川文化ギャラリー<small>GALLERY / EVENT</small></h3><p>個展・展示・小さな催し。人と街が出会うハレの場。</p><span class="tag">Webで仮予約できます</span><a class="more" href="2f/">料金・空き状況 →</a></div></div>
+            <div class="row f1"><div class="mini" aria-hidden="true"><img class="px" src="img/pixel/mini_1f.png" alt=""></div><img src="img/facade_entrance.jpg" alt="1階 POPUP STORE東船場" loading="lazy"><div><div class="fl en"><img class="px-ico" src="img/pixel/icon-1f.svg" alt="" style="width:.8em;height:.8em;margin-right:.25em;vertical-align:.02em">1F</div><h3>POPUP STORE東船場<small>ONE-MONTH SHOP</small></h3><p>1ヶ月だけの店主が入れ替わる、街にひらかれた1階。アーチ窓と天井の高さが気持ちいい。売上歩合10%。</p><span class="tag">出店者募集中</span><a class="more" href="1f/">出店のくわしい案内 →</a></div></div>
           </div>
         </div>
       </div>
     </section>
-    <svg class="wave" style="color:var(--paper)"><use href="#wave" transform="translate(0,46) scale(1,-1)"/></svg>
+    <svg class="wave" style="color:var(--px-sky1)"><use href="#wave" transform="translate(0,46) scale(1,-1)"/></svg>
   </div>
+
+  <!-- PIXEL GUIDE（ピクセル画のビル。階をクリックで各フロアへ） -->
+  <section class="px-guide" id="guide" aria-labelledby="guide-h">
+    <div class="wrap head">
+      <div class="label reveal in"><span class="e en">FLOOR GUIDE</span><span class="j">ビルをのぞいてみる</span></div>
+      <h2 class="h2 mincho" id="guide-h">気になる階を、押してみてください。</h2>
+    </div>
+    <div class="px-viewport">
+      <div class="px-stage">
+        <img class="scene px" src="img/pixel/scene.png" alt="ドット絵の旧高原ビル（国際ビル）。新町川のほとり、遊歩道に麦わら帽子の案内人と提灯、川に小舟" width="240" height="98">
+        <div class="boat" aria-hidden="true"><img class="px" src="img/pixel/boat.png" alt=""></div>
+        <a class="px-hot f3" href="3f/" data-floor="3"><span class="tag">3F ワークスペース</span></a>
+        <a class="px-hot f2" href="2f/" data-floor="2"><span class="tag">2F ギャラリー</span></a>
+        <a class="px-hot f1" href="1f/" data-floor="1"><span class="tag">1F 出店</span></a>
+        <p class="px-say" aria-hidden="true">ようこそ、<br>senba へ。</p>
+      </div>
+    </div>
+    <div class="px-dock">
+      <div class="wrap">
+        <div class="px-window px-box">
+          <div class="px-msg" data-px-msg data-lines="1932年から この川のほとりに 立っている ビルです。|1Fは 1ヶ月だけの お店。家賃は 売上の10%。|2Fは ギャラリー。1日から 借りられます。|3Fは ワークスペース。ドロップインは 1日1,100円。|気になる階を 押してみてください。">
+            <span class="who">案内人</span><br><span class="txt">1932年から この川のほとりに 立っている ビルです。</span><span class="cur" aria-hidden="true">▼</span>
+          </div>
+          <ul class="px-cmd">
+            <li><a href="1f/" data-floor="1"><img class="px-ico" src="img/pixel/icon-1f.svg" alt="">1F 出店する<small>12/1 OPEN</small></a></li>
+            <li><a href="2f/" data-floor="2"><img class="px-ico" src="img/pixel/icon-2f.svg" alt="">2F ギャラリーを借りる<small>Web仮予約</small></a></li>
+            <li><a href="3f/" data-floor="3"><img class="px-ico" src="img/pixel/icon-3f.svg" alt="">3F 席を予約する<small>ドロップイン</small></a></li>
+          </ul>
+        </div>
+      </div>
+      <svg class="wave" style="color:var(--paper);margin-top:clamp(28px,4vw,44px)"><use href="#wave" transform="translate(0,46) scale(1,-1)"/></svg>
+    </div>
+  </section>
 
   <!-- HOW IT WORKS -->
   <section class="how" id="how">
@@ -679,6 +716,7 @@
         </div>
       </div>
     </section>
+    <div class="px-river" aria-hidden="true"><div class="boat"><img class="px" src="img/pixel/boat.png" alt=""></div></div>
     <footer>
       <div class="wrap">
         <div class="f-top">
@@ -688,7 +726,7 @@
           </div>
           <div class="f-col">
             <h4>MENU</h4>
-            <a href="#concept">コンセプト</a><a href="#building">建物</a><a href="#floor">フロア案内</a><a href="#how">1Fのしくみ</a><a href="#join">出店者募集</a><a href="#access">アクセス</a>
+            <a href="#concept">コンセプト</a><a href="#building">建物</a><a href="#floor">フロア案内</a><a href="#how">1Fのしくみ</a><a href="#join">出店者募集</a><a href="#access">アクセス</a><a href="1f/">1F 出店（チャレンジスペース）</a><a href="2f/">2F ギャラリー（予約）</a><a href="3f/">3F ワークスペース（予約）</a>
           </div>
           <div class="f-col">
             <h4>OPERATED BY</h4>
@@ -723,5 +761,6 @@
 <script>
 (function(){var t=document.querySelector('.hero .track');if(!t)return;var x=0,last=null,half=0;function measure(){half=t.scrollWidth/2}function step(ts){if(last===null)last=ts;var dt=Math.min(ts-last,50);last=ts;if(!half)measure();x+=dt*0.045;if(half&&x>=half)x-=half;t.style.transform='translate3d('+(-x)+'px,0,0)';requestAnimationFrame(step)}window.addEventListener('resize',measure);window.addEventListener('load',measure);requestAnimationFrame(step)})();
 </script>
+<script src="assets/pixel.js" defer></script>
 </body>
 </html>

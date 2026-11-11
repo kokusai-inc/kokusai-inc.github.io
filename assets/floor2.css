@@ -1,0 +1,186 @@
+/* フロア別ページ 読みやすさの改修（2026/10/31 ドラフト）
+   デザインの約束：綺麗め（写真・明朝・臙脂）が土台。ドット絵は「案内役」だけ＝フロアマップ・アイコン・フッターの川。
+   ドット文字と角ばった影はドット絵の部品の中だけで使い、ほかは丸み・細い線でそろえる
+   方針：まず「ひと目でわかる」数字 → 目次 → 1テーマ1ブロック。文章は短く、条件はアイコン付きの箇条に。
+   floor.css・pixel.css の後に読み込む */
+
+.pxi{width:26px;height:26px;image-rendering:pixelated;flex:none;display:block}
+.split img.pxi{width:26px;height:26px;aspect-ratio:auto;object-fit:contain;border-radius:0}
+.floors .home{border-color:var(--ink)}
+@media(max-width:520px){
+  .topbar .in{gap:6px}
+  .floors{gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none}
+  .floors::-webkit-scrollbar{display:none}
+  .floors a{flex:none;font-size:.68rem;padding:.3em .6em;letter-spacing:0}
+  .floors .home{padding:.3em .5em}
+  .floors .home .t{display:none}
+  .floors .home .px-ico{display:inline-block;width:14px;height:15px;margin:0;vertical-align:-3px}
+}
+.sec{padding:clamp(56px,7vw,88px) 0}
+.sec-lead{color:var(--grey);margin-top:.6rem;max-width:40em;font-size:.95rem}
+
+/* ヒーロー：短いキャッチ＋行動ボタン */
+.phero .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.4rem}
+.phero .acts .btn{box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.btn--ghost{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.75);color:#fff;backdrop-filter:blur(4px)}
+.status{display:inline-flex;align-items:center;gap:.5em;font-size:.74rem;font-weight:700;letter-spacing:.12em;border:1px solid rgba(255,255,255,.7);color:#fff;border-radius:999px;padding:.15em .9em;margin-left:.6em;vertical-align:.25em}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+
+/* ひと目でわかる */
+.glance{position:relative;z-index:4;margin-top:-34px}
+.glance ul{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(42,37,33,.08);overflow:hidden}
+.glance li{display:flex;gap:12px;align-items:center;padding:18px 20px;min-width:0}
+.glance li + li{border-left:1px solid var(--line)}
+.glance .k{display:block;font-size:.72rem;font-weight:700;color:var(--grey);letter-spacing:.08em;line-height:1.4}
+.glance .v{display:block;font-size:1.3rem;font-weight:700;line-height:1.35;letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+.glance .v small{font-size:.7rem;font-weight:500;color:var(--grey);margin-left:.15em}
+
+/* ページ内の目次 */
+.subnav{position:sticky;top:62px;z-index:50;background:rgba(250,250,250,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:28px}
+.subnav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.subnav .wrap::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font-size:.8rem;font-weight:700;padding:.35em 1em;border-radius:999px;background:var(--cream);color:var(--ink);white-space:nowrap}
+.subnav a:hover,.subnav a:focus-visible{background:var(--accent);color:#fff;outline:none}
+.subnav a.cta{background:var(--accent);color:#fff;margin-left:auto}
+[id]{scroll-margin-top:120px}
+
+/* ポイント */
+.points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.point{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:.5rem}
+.point .pxi{width:34px;height:34px;margin-bottom:.2rem}
+.point h3{font-size:1.05rem;line-height:1.6}
+.point h3 em{font-style:normal;color:var(--accent)}
+.point p{font-size:.86rem;color:var(--grey);line-height:1.85}
+
+/* イメージ（1F） */
+.ideas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
+.ideas figure{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.ideas img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ideas figcaption{padding:10px 14px;font-size:.85rem;font-weight:700;line-height:1.6}
+.ideas figcaption small{display:block;font-weight:500;color:var(--grey);font-size:.74rem}
+
+/* 家賃の計算（1F） */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,34px);margin-top:28px}
+.calc label{display:block;font-weight:700;font-size:.9rem}
+.calc output.sales{display:block;font-size:2rem;font-weight:700;letter-spacing:.02em;margin:.2rem 0 .4rem}
+.calc input[type=range]{width:100%;accent-color:var(--accent)}
+.calc .scale{display:flex;justify-content:space-between;font-size:.7rem;color:var(--grey)}
+.calc dl{display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:.92rem;align-items:baseline}
+.calc dt{color:var(--grey)}
+.calc dd{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.calc .total{border-top:2px solid var(--ink);padding-top:8px;font-size:1.05rem;color:var(--ink)}
+.calc dd.total{font-size:1.5rem;color:var(--accent)}
+
+/* できる・できない */
+.dodont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.dodont > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.dodont h3{display:flex;align-items:center;gap:.5em;font-size:1rem;margin-bottom:.6rem}
+.dodont h3 .pxi{width:22px;height:22px}
+.dodont ul{list-style:none;display:grid;gap:.5rem}
+.dodont li{font-size:.9rem;line-height:1.75;padding-left:1.1em;position:relative}
+.dodont li::before{content:"";position:absolute;left:0;top:.68em;width:7px;height:7px;background:var(--ink)}
+.dodont li small{display:block;color:var(--grey);font-size:.78rem}
+
+/* アイコン付きの箇条（設備・約束・条件） */
+.ilist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:24px}
+.ilist li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}
+.ilist .pxi{margin-top:2px}
+.ilist b{display:block;font-size:.93rem;line-height:1.6}
+.ilist span{display:block;font-size:.8rem;color:var(--grey);line-height:1.75}
+
+/* 流れ（順番どおりの手順） */
+.flow{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;margin-top:28px;counter-reset:f}
+.flow li{position:relative;padding:0 18px 0 0;counter-increment:f}
+.flow li::before{content:counter(f);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;position:relative;z-index:1}
+.flow li::after{content:"";position:absolute;left:46px;right:6px;top:19px;border-top:1px solid var(--accent);opacity:.45}
+.flow li:last-child::after{display:none}
+.flow .when{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:.1em .7em;border-radius:999px}
+.flow h3{font-size:1rem;margin-top:6px}
+.flow p{font-size:.84rem;color:var(--grey);line-height:1.8;margin-top:2px}
+
+/* プラン（3F） */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:.7rem;position:relative}
+.plan.main{border:2px solid var(--accent)}
+.plan .badge{position:absolute;top:-12px;left:20px;font-size:.72rem;font-weight:700;letter-spacing:.08em;background:var(--accent);color:#fff;padding:.15em .9em;border-radius:999px}
+.plan h3{font-size:1.1rem}
+.plan .price{font-size:2rem;font-weight:700;line-height:1.2;letter-spacing:.02em}
+.plan .price small{font-size:.78rem;font-weight:500;color:var(--grey);margin-left:.2em}
+.plan .for{font-size:.84rem;color:var(--grey);line-height:1.75}
+.plan ul{list-style:none;display:grid;gap:.35rem;font-size:.86rem;line-height:1.65}
+.plan li{display:flex;gap:.55em;align-items:flex-start}
+.plan li img{width:14px;height:14px;margin-top:.3em;image-rendering:pixelated;flex:none}
+.plan li.no{color:var(--grey)}
+.plan .btn{margin-top:auto;align-self:stretch}
+
+/* 比較表 */
+.cmp-wrap{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.cmp{width:100%;min-width:560px;border-collapse:collapse;font-size:.88rem}
+.cmp th,.cmp td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:center;line-height:1.6}
+.cmp thead th{background:var(--accent-soft);font-size:.82rem}
+.cmp tbody th{text-align:left;font-weight:700;white-space:nowrap;background:var(--cream)}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.cmp td img{width:16px;height:16px;image-rendering:pixelated;display:inline-block;vertical-align:-3px}
+
+/* 1週間の使い方（2F） */
+.week{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;margin-top:14px;text-align:center;font-size:.76rem}
+.week div{background:var(--cream);border-radius:6px;padding:8px 2px;line-height:1.4}
+.week b{display:block;font-size:.9rem}
+.week .in,.week .out{background:#fff;border:1.5px dashed var(--accent);color:var(--accent)}
+.week .on{background:var(--accent);color:#fff}
+
+/* 料金カード（2F） */
+.pplan{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.pplan .card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:12px;padding:22px 24px}
+.pplan .t{font-weight:700}
+.pplan .v{font-size:2.1rem;font-weight:700;line-height:1.3;letter-spacing:.02em}
+.pplan .v small{font-size:.8rem;font-weight:500;color:var(--grey);margin-left:.2em}
+.pplan dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.84rem;margin-top:.8rem}
+.pplan dt{color:var(--grey)}
+.ptable{width:100%;border-collapse:collapse;font-size:.88rem;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.ptable td{padding:10px 16px;border-bottom:1px solid var(--line)}
+.ptable td:last-child{text-align:right;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ptable tr:last-child td{border-bottom:0}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);margin-top:28px}
+.two h3{font-size:1rem;margin-bottom:.7rem;display:flex;align-items:center;gap:.5em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;list-style:none}
+.chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.25em .9em;font-size:.84rem}
+.pay{list-style:none;display:grid;gap:10px;counter-reset:p}
+.pay li{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;line-height:1.75;counter-increment:p}
+.pay li::before{content:counter(p);flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-family:"Cormorant Garamond",serif;font-size:.95rem;font-weight:600;margin-top:.15em}
+
+/* しめのボタン帯 */
+.ctaband{background:var(--accent);color:#fff;border-radius:16px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;margin-top:8px}
+.ctaband h2{font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.6}
+.ctaband p{font-size:.86rem;opacity:.9}
+.ctaband .btns{display:flex;flex-wrap:wrap;gap:10px}
+.ctaband .btn{background:#fff;color:var(--accent)}
+.ctaband .btn.sub{background:transparent;border:1.5px solid #fff;color:#fff}
+
+@media(max-width:960px){
+  .glance ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .glance li:nth-child(3){border-left:0}
+  .glance li:nth-child(n+3){border-top:1px solid var(--line)}
+  .ideas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .plans{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .points,.dodont,.pplan,.two,.calc{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr;gap:18px}
+  .flow li{padding:0 0 0 56px;min-height:40px}
+  .flow li::before{position:absolute;left:0;top:0}
+  .flow li::after{left:19px;right:auto;top:44px;bottom:-18px;border-top:0;border-left:1px solid var(--accent)}
+  .flow .when{margin-top:0}
+  .week{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:520px){
+  .glance{margin-top:-24px}
+  .glance li{padding:14px 12px;gap:8px}
+  .glance .pxi{width:20px;height:20px}
+  .glance .v{font-size:1.05rem;white-space:normal}
+  .ideas{grid-template-columns:1fr 1fr;gap:10px}
+  .ideas figcaption{font-size:.78rem;padding:8px 10px}
+  .phero .acts .btn{flex:1 1 auto}
+}
+
+.h2,.phero h1{text-wrap:balance}
